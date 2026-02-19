@@ -42,7 +42,8 @@ const menu = [
     {name:'Feyza B.',  date:'10 months ago', stars:5, text:'Can\'t beat the convenient location, ease of order, and prices. The sandwiches are quite big for $5. They use dark chicken meat so it\'s more flavorful and moist. Fun place with chicken art on the walls, spacious, and a yellow theme throughout.'},
     {name:'Julian D.', date:'4 months ago',  stars:5, text:'Recently went to this chicken place and it was honestly so good. The chicken was crispy on the outside, juicy on the inside, and full of flavor. You could tell it was cooked fresh — not something sitting around. The seasoning was on point too.'},
   ];
-  
+
+
   const delivery = [
     {icon:'🛒',name:'Online Ordering by DoorDash',meta:'Service fee 10% · Delivery fee $3.99',   time:'Delivers in 32 min',   fee:true, url:'https://order.online/store/-23124359/?delivery=true&hideModal=true&utm_source=gfo&rwg_token=AFd1xnG8aUBC97MGEnFnaHqD1krp6xC4gzReCNi2myNLa0Mge4dSuJL0HZBjSz4Y6lERlW9UbY_qELIJD7pkCAAPVxslCr0UdQ%3D%3D'},
     {icon:'🍔',name:'Grubhub',                    meta:'Service fee 5–15% · Delivery from $1.49',time:'Delivers in 25 min',   fee:true, url:'https://www.grubhub.com/restaurant/call-a-chicken-4237-university-way-ne-seattle/5616552?utm_source=google&utm_medium=organic&utm_campaign=place-action-link&delivery=true&rwg_token=AFd1xnFOnfTrhRwDq5cCetIKK3yXp5292NJRKbWxLwOcyOZJpOVdHGomoG5LQAI4VaMofoxnsBl9OTL5sMV30uyqwHFuXN9rMg%3D%3D'},
@@ -63,7 +64,6 @@ const menu = [
     {icon:'📮',name:'Postmates',                  meta:'No fee',           time:'Ready in 1–16 min', fee:false,url:'https://www.postmates.com/store/call-a-chicken/6wnB9pi0VIaHIjSVaSyIaQ?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas'},
     {icon:'🚘',name:'Uber Eats',                  meta:'No fee',           time:'Ready in 1–16 min', fee:false,url:'https://www.ubereats.com/store/call-a-chicken/6wnB9pi0VIaHIjSVaSyIaQ?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas'},
   ];
-  
   
   // Menu
   function renderMenu(f) {
@@ -137,6 +137,14 @@ const menu = [
   
   function closeModal() {
     document.getElementById('orderModal').classList.remove('open');
+  }
+  
+  function openMapModal() {
+    document.getElementById('mapModal').classList.add('open');
+  }
+  
+  function closeMapModal() {
+    document.getElementById('mapModal').classList.remove('open');
   }
   
   // Slideshow

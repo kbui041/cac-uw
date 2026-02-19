@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Call a Chicken — University District Seattle</title>
+  <title>🐔 CALL A CHICKEN UW</title>
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
 
@@ -13,7 +14,7 @@
   <div class="modal">
     <div class="modal-header">
       <div>
-        <h3>🐔 Order from Call a Chicken</h3>
+        <h3>🐔 Order from CALL A CHICKEN</h3>
         <p>4237 University Way NE, Seattle</p>
       </div>
       <button class="modal-close" onclick="closeModal()">✕</button>
@@ -31,28 +32,28 @@
   <a class="logo" href="#">
     <div class="logo-mark">🐔 CAC</div>
     <div>
-      <div class="logo-name">Call a Chicken</div>
+      <div class="logo-name">CALL A CHICKEN</div>
       <div class="logo-zh">叫了个鸡</div>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#visit">Visit</a></li>
+    <li><a href="#menu">MENU</a></li>
+    <li><a href="#reviews">REVIEWS</a></li>
+    <li><a href="#visit">VISIT</a></li>
   </ul>
-  <button class="nav-cta" onclick="openModal()">Order Now</button>
+  <button class="nav-cta" onclick="openModal()">ORDER NOW</button>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <div class="hero-tag">University District · Seattle</div>
-    <h1>Call a<br>Chicken 🐔</h1>
+    <div class="hero-tag" style="width:fit-content">University District · Seattle</div>
+    <h1>CALL A<br>CHICKEN 🐔</h1>
     <div class="hero-zh">叫了个鸡</div>
-    <p class="hero-tagline">"The best chicken on the Ave"</p>
+    <p class="hero-tagline">"The best chicken on the Ave!"</p>
     <p class="hero-desc">Crispy jumbo wings, seaweed rice bowls, and five signature sauces. Right on University Way NE.</p>
     <div class="hero-actions">
-      <button class="btn-primary" onclick="openModal()">Order Now</button>
+      <button class="btn-primary" onclick="openModal()">ORDER NOW</button>
       <button class="btn-ghost" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">View Menu</button>
     </div>
   </div>
@@ -82,14 +83,14 @@
   <p class="sec-sub">All items available for pickup or delivery. Pickup orders receive 12% off on Fantuan.</p>
   <div style="overflow-x:auto;margin-bottom:40px">
     <div class="menu-nav">
-      <div class="tab active" onclick="filterMenu('all',this)">All</div>
-      <div class="tab" onclick="filterMenu('specials',this)">Signature Specials</div>
-      <div class="tab" onclick="filterMenu('combo',this)">Combos</div>
-      <div class="tab" onclick="filterMenu('sandwiches',this)">Sandwiches & Wraps</div>
-      <div class="tab" onclick="filterMenu('rice',this)">Seaweed Rice</div>
-      <div class="tab" onclick="filterMenu('appetizers',this)">Appetizers</div>
-      <div class="tab" onclick="filterMenu('sauces',this)">Sauces</div>
-      <div class="tab" onclick="filterMenu('drinks',this)">Drinks</div>
+      <div id = "signaturespecials" class="tab active" onclick="filterMenu('all',this)">ALL</div>
+      <div class="tab" onclick="filterMenu('specials',this)">SIGNATURE SPECIALS</div>
+      <div class="tab" onclick="filterMenu('combo',this)">COMBOS</div>
+      <div class="tab" onclick="filterMenu('sandwiches',this)">SANDWICHES & WRAPS</div>
+      <div class="tab" onclick="filterMenu('rice',this)">SEAWEED RICE</div>
+      <div class="tab" onclick="filterMenu('appetizers',this)">APPETIZERS</div>
+      <div class="tab" onclick="filterMenu('sauces',this)">SAUCES</div>
+      <div class="tab" onclick="filterMenu('drinks',this)">DRINKS</div>
     </div>
   </div>
   <div class="menu-grid" id="menuGrid"></div>
@@ -126,9 +127,40 @@
   <div class="reviews-grid" id="reviewsGrid"></div>
 </section>
 
+<!-- MAP MODAL -->
+<div class="map-modal-overlay" id="mapModal" onclick="if(event.target===this)closeMapModal()">
+  <div class="map-modal">
+    <div class="map-modal-header">
+      <div>
+        <h3>🐔 CALL A CHICKEN — University District</h3>
+        <p>4237 University Way NE, Seattle, WA 98105</p>
+      </div>
+      <button class="map-modal-close" onclick="closeMapModal()">✕</button>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.287160985957!2d-122.31342199999999!3d47.65941759999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490152a810a3719%3A0x4b8ad7d7f209d773!2sCALL%20A%20CHICKEN%20-%20University%20of%20Washington!5e0!3m2!1sen!2sus!4v1771540222737!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+    
+    <div class="map-modal-footer">
+      <span style="font-size:.82rem;color:var(--gray)">4237 University Way NE · Opens 11 AM daily</span>
+      <a href="https://www.google.com/maps/place/call+a+chicken+uw/data=!4m2!3m1!1s0x5490152a810a3719:0x4b8ad7d7f209d773" target="_blank">Open in Google Maps →</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAP CTA (below reviews) -->
+<div style="padding:0 6% 72px">
+  <div class="map-cta">
+    <h3>Find Us on the Ave</h3>
+    <p>4237 University Way NE, Seattle, WA 98105 · Open daily from 11 AM</p>
+    <button class="btn-map" onclick="openMapModal()">View on Map</button>
+  </div>
+</div>
+
 <!-- VISIT -->
 <section class="info-bg" id="visit">
-  <div class="sec-label" style="color:#555">Find us</div>
+  <!-- <div class="sec-label" style="color:#555">Find us</div> -->
   <div class="sec-title" style="color:#fff;margin-bottom:40px">Visit Us 🐔</div>
   <div class="visit-grid">
     <div class="icard">
@@ -168,41 +200,41 @@
 <div class="cta">
   <span class="cta-chicken">🐔</span>
   <h2>Ready to order?</h2>
-  <p>Pickup in under 17 minutes or get it delivered. Fresh and crispy every time.</p>
-  <button class="cta-btn" onclick="openModal()">Order Now</button>
+  <p>Pickup in under 15 minutes or get it delivered. Fresh and crispy every time.</p>
+  <button class="cta-btn" onclick="openModal()">ORDER NOW</button>
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="fbrand">
-      <div class="fbrand-name">🐔 Call a Chicken</div>
+      <div class="fbrand-name">🐔 CALL A CHICKEN</div>
       <div class="fbrand-zh">叫了个鸡</div>
       <p>Seattle's best fried chicken, right in the heart of the University District.</p>
     </div>
     <div class="fcol">
       <h4>Menu</h4>
-      <a href="#">Signature Specials</a>
-      <a href="#">Sandwiches & Wraps</a>
-      <a href="#">Seaweed Rice</a>
-      <a href="#">Appetizers</a>
-      <a href="#">Drinks</a>
+      <a>SIGNATURE SPECIALS</a>
+      <a>SANDWICHES & WRAPS</a>
+      <a>SEAWEED RICE</a>
+      <a>APPETIZERS</a>
+      <a>DRINKS</a>
     </div>
     <div class="fcol">
       <h4>Order</h4>
-      <a href="#" onclick="openModal();return false">Order Online</a>
-      <a href="#" onclick="openModal();return false">Pickup (12% off)</a>
-      <a href="#" onclick="openModal();return false">Delivery Options</a>
+      <a href="#" onclick="openModal();return false">ORDER ONLINE</a>
+      <a href="#" onclick="openModal();return false">PICKUP (12% OFF)</a>
+      <a href="#" onclick="openModal();return false">DELIVERY OPTIONS</a>
     </div>
     <div class="fcol">
       <h4>Visit</h4>
-      <a href="#">4237 University Way NE</a>
-      <a href="#">Seattle, WA 98105</a>
+      <a>4237 University Way NE</a>
+      <a >Seattle, WA 98105</a>
       <a href="https://maps.google.com/?q=Call+a+Chicken+4237+University+Way+NE+Seattle" target="_blank">Get Directions</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>🐔 © 2026 Call a Chicken UW · 叫了个鸡</span>
+    <span>🐔 © 2026 CALL A CHICKEN UW · 叫了个鸡</span>
     <span>4.5 stars · 700+ Google reviews · University District Seattle</span>
   </div>
 </footer>

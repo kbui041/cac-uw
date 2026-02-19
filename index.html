@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call a Chicken — University District Seattle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="orderModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <h3>🐔 Order from Call a Chicken</h3>
+        <p>4237 University Way NE, Seattle</p>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" onclick="switchTab('delivery',this)">Delivery</button>
+      <button class="modal-tab" onclick="switchTab('pickup',this)">Pickup</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-mark">🐔 CAC</div>
+    <div>
+      <div class="logo-name">Call a Chicken</div>
+      <div class="logo-zh">叫了个鸡</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Order Now</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">University District · Seattle</div>
+    <h1>Call a<br>Chicken 🐔</h1>
+    <div class="hero-zh">叫了个鸡</div>
+    <p class="hero-tagline">"The best chicken on the Ave — period."</p>
+    <p class="hero-desc">Crispy jumbo wings, seaweed rice bowls, and five signature sauces. Right on University Way NE.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="openModal()">Order Now</button>
+      <button class="btn-ghost" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">View Menu</button>
+    </div>
+  </div>
+  <div class="hero-image-wrap" id="heroSlider">
+    <div class="slide active"><div class="slide-placeholder"><div class="big-emoji">🍗</div><div class="label">Jumbo Party Wings</div></div></div>
+    <div class="slide"><div class="slide-placeholder"><div class="big-emoji">🐔</div><div class="label">Chicken Sandwich</div></div></div>
+    <div class="slide"><div class="slide-placeholder"><div class="big-emoji">🍙</div><div class="label">Seaweed Rice Bowl</div></div></div>
+    <div class="slide"><div class="slide-placeholder"><div class="big-emoji">🔥</div><div class="label">Flaming Honey Wings</div></div></div>
+    <div class="slide"><div class="slide-placeholder"><div class="big-emoji">🌯</div><div class="label">Beijing Chicken Wrap</div></div></div>
+    <div class="slide-dots" id="slideDots"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">4.5 ★</div><div class="stat-label">Google · 700+ Reviews</div></div>
+  <div class="stat"><div class="stat-num">4.3 ★</div><div class="stat-label">Fantuan Rating</div></div>
+  <div class="stat"><div class="stat-num">~$10</div><div class="stat-label">Avg Order</div></div>
+  <div class="stat"><div class="stat-num">~14 min</div><div class="stat-label">Avg Pickup</div></div>
+  <div class="stat"><div class="stat-num">~22 min</div><div class="stat-label">Avg Delivery</div></div>
+</div>
+
+<!-- MENU -->
+<section class="menu-bg" id="menu">
+  <div class="sec-label">🐔 What we serve</div>
+  <div class="sec-title">Menu</div>
+  <p class="sec-sub">All items available for pickup or delivery. Pickup orders receive 12% off on Fantuan.</p>
+  <div style="overflow-x:auto;margin-bottom:40px">
+    <div class="menu-nav">
+      <div class="tab active" onclick="filterMenu('all',this)">All</div>
+      <div class="tab" onclick="filterMenu('specials',this)">Signature Specials</div>
+      <div class="tab" onclick="filterMenu('combo',this)">Combos</div>
+      <div class="tab" onclick="filterMenu('sandwiches',this)">Sandwiches & Wraps</div>
+      <div class="tab" onclick="filterMenu('rice',this)">Seaweed Rice</div>
+      <div class="tab" onclick="filterMenu('appetizers',this)">Appetizers</div>
+      <div class="tab" onclick="filterMenu('sauces',this)">Sauces</div>
+      <div class="tab" onclick="filterMenu('drinks',this)">Drinks</div>
+    </div>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+  <div class="allergen-note"><strong>Allergen notice:</strong> Please consult our staff if you have an allergy to eggs, wheat/gluten, or milk.</div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="sec-label">What customers say</div>
+  <div class="sec-title">Reviews</div>
+  <div class="rating-row">
+    <div>
+      <div style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray);margin-bottom:6px">Google</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="rating-big">4.5</div>
+        <div>
+          <div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star half"></div></div>
+          <div class="rating-detail">700+ Google reviews</div>
+        </div>
+      </div>
+    </div>
+    <div style="width:1px;height:60px;background:var(--border)"></div>
+    <div>
+      <div style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray);margin-bottom:6px">Fantuan</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="rating-big">4.3</div>
+        <div>
+          <div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star half"></div></div>
+          <div class="rating-detail">100+ ratings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid"></div>
+</section>
+
+<!-- VISIT -->
+<section class="info-bg" id="visit">
+  <div class="sec-label" style="color:#555">Find us</div>
+  <div class="sec-title" style="color:#fff;margin-bottom:40px">Visit Us 🐔</div>
+  <div class="visit-grid">
+    <div class="icard">
+      <div class="icard-label">Location</div>
+      <h3>University District</h3>
+      <p>4237 University Way NE<br>Seattle, WA 98105<br><br>
+        <a href="https://maps.google.com/?q=Call+a+Chicken+4237+University+Way+NE+Seattle" target="_blank" style="color:var(--yellow);font-size:.82rem;font-weight:600;">Get Directions →</a>
+      </p>
+    </div>
+    <div class="icard">
+      <div class="icard-label">Hours</div>
+      <h3>Open Daily</h3>
+      <div class="hours-grid">
+        <span class="day">Monday</span>    <span>11 AM – 12 AM</span>
+        <span class="day">Tuesday</span>   <span>11 AM – 12 AM</span>
+        <span class="day">Wednesday</span> <span>11 AM – 12 AM</span>
+        <span class="day">Thursday</span>  <span>11 AM – 12 AM</span>
+        <span class="day">Friday</span>    <span>11 AM – 12 AM</span>
+        <span class="day">Saturday</span>  <span>11 AM – 12 AM</span>
+        <span class="day">Sunday</span>    <span>11 AM – 10:30 PM</span>
+      </div>
+    </div>
+    <div class="icard">
+      <div class="icard-label">Pickup</div>
+      <h3>Ready in 10–17 min</h3>
+      <p><strong>12% off</strong> pickup orders on Fantuan<br>No fee across all platforms</p>
+    </div>
+    <div class="icard">
+      <div class="icard-label">Delivery</div>
+      <h3>9–43 min</h3>
+      <p>8 platforms available including<br>Uber Eats, DoorDash, Grubhub & more</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <span class="cta-chicken">🐔</span>
+  <h2>Ready to order?</h2>
+  <p>Pickup in under 17 minutes or get it delivered. Fresh and crispy every time.</p>
+  <button class="cta-btn" onclick="openModal()">Order Now</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="fbrand">
+      <div class="fbrand-name">🐔 Call a Chicken</div>
+      <div class="fbrand-zh">叫了个鸡</div>
+      <p>Seattle's best fried chicken, right in the heart of the University District.</p>
+    </div>
+    <div class="fcol">
+      <h4>Menu</h4>
+      <a href="#">Signature Specials</a>
+      <a href="#">Sandwiches & Wraps</a>
+      <a href="#">Seaweed Rice</a>
+      <a href="#">Appetizers</a>
+      <a href="#">Drinks</a>
+    </div>
+    <div class="fcol">
+      <h4>Order</h4>
+      <a href="#" onclick="openModal();return false">Order Online</a>
+      <a href="#" onclick="openModal();return false">Pickup (12% off)</a>
+      <a href="#" onclick="openModal();return false">Delivery Options</a>
+    </div>
+    <div class="fcol">
+      <h4>Visit</h4>
+      <a href="#">4237 University Way NE</a>
+      <a href="#">Seattle, WA 98105</a>
+      <a href="https://maps.google.com/?q=Call+a+Chicken+4237+University+Way+NE+Seattle" target="_blank">Get Directions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>🐔 © 2026 Call a Chicken UW · 叫了个鸡</span>
+    <span>4.5 stars · 700+ Google reviews · University District Seattle</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
